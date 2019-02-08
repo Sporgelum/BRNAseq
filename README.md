@@ -10,6 +10,7 @@ Continues with ENRICHMENTS for three species in parallel with Danio rerio homolo
   2:Gen set enrichment analysis (ORA) with all the genes detected and ranked by the Log2FoldChange in GO and KEGG databases.
   
   3:GSEA using Hallmarks and GO:C5 for Mouse and Human, .rData obtained from (http://bioinf.wehi.edu.au/software/MSigDB/)
+    This data is /gsea_bundle/ directory called in the Rscript, just save your Hallmarks,GO and use it from there.
 
 Finally concluding with the regular most used and basic plots;
   
