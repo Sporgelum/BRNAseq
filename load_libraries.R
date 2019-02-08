@@ -1,4 +1,6 @@
 #Load libraries.
+#Install Bioconductor
+#install.packages("BiocManager")
 #BiocManager::install(pkgs = c("limma","edgeR","GEOquery","Rsubread"))
 #install.packages("devtools")
 library(dplyr)
