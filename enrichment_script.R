@@ -2203,14 +2203,35 @@ write.table(x = dr_control_heatmap_tops, "./Heatmap/Drerio/dr_control_heatmap.tx
 
 #Create a folder for this task.
 dir.create("./DEgenes")
-write.table(x = anno_zebrafish_control_stats,"./DEgenes/all_annotated_DExpressed_genes_zebrafish.txt",sep="\t",col.names=T,row.names =F,quote=F)
+
+#Save full annotated data for; Danio, Human and Mouse.
+write.table(x = anno_zebrafish_control_stats,"./DEgenes/all_annotated_DExpressed_genes_control_zebrafish.txt",sep="\t",col.names=T,row.names =F,quote=F)
+write.table(anno_human_control_stats,"./DEgenes/all_annotated_DExpressed_genes_control_human.txt",sep = "\t",col.names = T,row.names = F,quote = T)
+write.table(anno_mouse_control_stats,"./DEgenes/all_annotated_DExpressed_genes_control_mouse.txt",sep = "\t",col.names = T,row.names = F,quote = T)
+
 
 
 #Filtered data table for absolute Log2FoldChange > 2 and padj < 0.05
 write.table(anno_zebrafish_control_stats[which(abs(anno_zebrafish_control_stats$log2FoldChange) > 2 & anno_zebrafish_control_stats$padj < 0.05),],"./DEgenes/filtered_DExpressed_genes_zebrafish.txt",sep="\t",row.names=F,col.names=T,quote=F)
+
+#Check the length of the file if filtered.
 dim(anno_zebrafish_control_stats[which(abs(anno_zebrafish_control_stats$log2FoldChange>2) & anno_zebrafish_control_stats$padj<.05),])
 
+#Write a report of the analysis, contrast used and what have been done.
+description_text_st_diet<-c("The following analysis was done for the comparison of """""";
+                            
+                            Contrast used: .........
+                            
+                            The results were annotated and enriched using different approaches, using Danio and Human and Mouse homologues.")
 
+
+#Save the descript file.
+write.table(description_text_st_diet,"./Description_text.txt",sep = "\t",col.names = F,row.names = F,quote = F)
+
+
+#Save session with all the data stored in R current session.
+dir.create("./R")
+save.image(file = "./R/st_diet_session.RData")
 
 
 #####################################################
@@ -2221,30 +2242,3 @@ dim(anno_zebrafish_control_stats[which(abs(anno_zebrafish_control_stats$log2Fold
 #    also do reactome database.db                   #
 #   for pathways enrichment                         #
 #####################################################
-
-#####################################################
-#                 FGSEA                             #    
-#####################################################
-#                                                   #
-#             REACTOME ENRICHMENT                   #
-#                                                   #
-#               pathways                            #  
-#                                                   #
-#                ENRICHMENT                         #
-#                                                   #
-#####################################################
-
-#Human ranked genes.
-#head(hs_control_ranked_genes)
-
-#Load for the task the reactome package database
-#library(reactome.db)
-
-#reactome_pathways<-reactomePathways(names(hs_control_ranked_genes))
-
-
-#hs_reactome_control_enrichment<-enrichPathway(gene = hs_control_ranked_genes, organism = "hsa",pvalueCutoff = 0.05,pAdjustMethod = "BH",minGSSize = 10)
-#head(hs_reactome_control_enrichment)
-
-
-
