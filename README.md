@@ -12,13 +12,14 @@ Continues with ENRICHMENTS for three species in parallel with Danio rerio homolo
   3:GSEA using Hallmarks and GO:C5 for Mouse and Human, .rData obtained from (http://bioinf.wehi.edu.au/software/MSigDB/)
     This data is /gsea_bundle/ directory called in the Rscript, just save your Hallmarks,GO and use it from there.
 
+
 Finally concluding with the regular most used and basic plots;
   
   1: Volcano plot.
   2: PCA
   3: Heatmap
   
-Save the data filtered and raw data after all, in a txt file.
+Save the all the annotated data for each species used and the filtered, in a txt file (tab).
 
 DONE.
 
