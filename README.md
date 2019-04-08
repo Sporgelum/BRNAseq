@@ -6,12 +6,14 @@ RNAseq analysis script using Kallisto (quantification) + tximport(importing h5 f
 Continues with ENRICHMENTS for three species in parallel with Danio rerio homologues genes in Human and Mouse.
 
   1:Enrichment using statistically relevant data for analysis, always using padj<0.05 for GO (BP,MF,CC) and KEGG.
+  
     1.1: KEGG
     1.2: GO BP
     1.3: GO MF
     1.4: GO CC
       
   2:Gen set enrichment analysis (ORA) with all the genes detected and ranked by the Log2FoldChange in GO and KEGG databases.
+  
     2.1: KEGG
     2.2: GO BP
     2.3: GO MF
@@ -19,10 +21,12 @@ Continues with ENRICHMENTS for three species in parallel with Danio rerio homolo
     
   3:GSEA using Hallmarks and GO:C5 for Mouse and Human, .rData obtained from (http://bioinf.wehi.edu.au/software/MSigDB/)
     This data is /gsea_bundle/ directory called in the Rscript, just save your Hallmarks,GO and use it from there.
+    
     3.1: HALLMARKS
     3.2: GO DATABASE
 
   4:DAVID
+  
     4.1: DAVID KEGG
     4.2: DAVID GO_ALL
     4.3: DAVID GO_MF
