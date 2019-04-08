@@ -37,12 +37,13 @@ Continues with ENRICHMENTS for three species in parallel with Danio rerio homolo
 
   6: GSEA PLOTING AND NETWORKS(TODO)
   
-Finally concluding with the regular most used and basic plots;
   
-  1: Volcano plot.
-  2: PCA
-  3: Heatmap
-  4: GOPloting creating customized table.
+Finally concluding with the regular most used and basic plots
+   
+   1: Volcano plot.
+   2: PCA
+   3: Heatmap
+   4: GOPloting creating customized table.
   
 Save the all the annotated data for each species used and the filtered, in a txt file (tab).
 
